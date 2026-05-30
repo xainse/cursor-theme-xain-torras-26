@@ -7,8 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.4] - 2026-05-30
+
+### Added
+- Extension icon at `images/icon.png` declared via the `icon` field in `package.json`, so the extension shows a logo on the Open VSX listing and in the VS Code/Cursor Extensions panel.
+
 ### Changed
 - Refreshed documentation preview assets and related `README.md` references.
+- Version bumped to `0.0.4` for automated release publish.
 
 ## [0.0.3] - 2026-05-30
 
@@ -51,7 +57,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - MIT `LICENSE`.
 - Initial `README.md` with installation and local-test instructions.
 
-[Unreleased]: https://github.com/xainse/cursor-theme-xain-torras-26/compare/v0.0.3...HEAD
+[Unreleased]: https://github.com/xainse/cursor-theme-xain-torras-26/compare/v0.0.4...HEAD
+[0.0.4]: https://github.com/xainse/cursor-theme-xain-torras-26/compare/v0.0.3...v0.0.4
 [0.0.3]: https://github.com/xainse/cursor-theme-xain-torras-26/compare/v0.0.2...v0.0.3
 [0.0.2]: https://github.com/xainse/cursor-theme-xain-torras-26/compare/756f749...v0.0.2
 [0.0.1]: https://github.com/xainse/cursor-theme-xain-torras-26/tree/756f749

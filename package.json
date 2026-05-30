@@ -2,8 +2,9 @@
   "name": "xain-torras-26-theme",
   "displayName": "Xain Torras 26 Theme Pack",
   "description": "Light Cursor/VS Code themes inspired by Torras palette with orange accents.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "publisher": "xainse",
+  "icon": "images/icon.png",
   "license": "MIT",
   "homepage": "https://github.com/xainse/cursor-theme-xain-torras-26#readme",
   "repository": {

@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.5] - 2026-05-30
+
+### Changed
+- Expanded the Cursor agent one-click install prompt in `README.md` with a preferred **PATH A** that installs the extension directly from the Open VSX `.vsix` (no `cursor` CLI required) and a CLI-based **PATH B** fallback that locates the bundled `cursor` binary across macOS/Linux/Windows install paths.
+- Hardened `.github/workflows/publish.yml`:
+  - The "Publish to Open VSX" step is now idempotent — if the target version is already published on Open VSX the step emits a warning and exits successfully instead of failing the workflow (fixes spurious failures on manual `workflow_dispatch` re-runs of an already-released tag).
+  - Bumped the workflow's `node-version` from `20` to `22` (Active LTS).
+  - Opted in to the Node.js 24 runtime for JavaScript actions via `FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true`, ahead of GitHub's 2026-06-16 forced cutover.
+- Version bumped to `0.0.5` for automated release publish.
+
 ## [0.0.4] - 2026-05-30
 
 ### Added
@@ -57,7 +67,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - MIT `LICENSE`.
 - Initial `README.md` with installation and local-test instructions.
 
-[Unreleased]: https://github.com/xainse/cursor-theme-xain-torras-26/compare/v0.0.4...HEAD
+[Unreleased]: https://github.com/xainse/cursor-theme-xain-torras-26/compare/v0.0.5...HEAD
+[0.0.5]: https://github.com/xainse/cursor-theme-xain-torras-26/compare/v0.0.4...v0.0.5
 [0.0.4]: https://github.com/xainse/cursor-theme-xain-torras-26/compare/v0.0.3...v0.0.4
 [0.0.3]: https://github.com/xainse/cursor-theme-xain-torras-26/compare/v0.0.2...v0.0.3
 [0.0.2]: https://github.com/xainse/cursor-theme-xain-torras-26/compare/756f749...v0.0.2

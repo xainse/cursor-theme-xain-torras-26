@@ -1,6 +1,6 @@
 # XAIN Torras 26 Theme Pack
 
-[![Publish](https://github.com/xainse/cursor-theme-xain-torras-26/actions/workflows/publish.yml/badge.svg)](https://github.com/xainse/cursor-theme-xain-torras-26/actions/workflows/publish.yml)
+[![Publish](https://github.com/xainse/cursor-theme-xain-torras-26/actions/workflows/publish.yml/badge.svg?event=push)](https://github.com/xainse/cursor-theme-xain-torras-26/actions/workflows/publish.yml?query=event%3Apush)
 [![Open VSX Version](https://img.shields.io/open-vsx/v/xainse/xain-torras-26-theme?label=Open%20VSX&color=c160ef)](https://open-vsx.org/extension/xainse/xain-torras-26-theme)
 [![Open VSX Downloads](https://img.shields.io/open-vsx/dt/xainse/xain-torras-26-theme?label=downloads&color=ff7a1a)](https://open-vsx.org/extension/xainse/xain-torras-26-theme)
 [![Open VSX Rating](https://img.shields.io/open-vsx/rating/xainse/xain-torras-26-theme?label=rating)](https://open-vsx.org/extension/xainse/xain-torras-26-theme/reviews)

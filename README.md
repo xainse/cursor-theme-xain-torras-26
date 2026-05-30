@@ -1,6 +1,17 @@
 # XAIN Torras 26 Theme Pack
 
+[![Publish](https://github.com/xainse/cursor-theme-xain-torras-26/actions/workflows/publish.yml/badge.svg)](https://github.com/xainse/cursor-theme-xain-torras-26/actions/workflows/publish.yml)
+[![Open VSX Version](https://img.shields.io/open-vsx/v/xainse/xain-torras-26-theme?label=Open%20VSX&color=c160ef)](https://open-vsx.org/extension/xainse/xain-torras-26-theme)
+[![Open VSX Downloads](https://img.shields.io/open-vsx/dt/xainse/xain-torras-26-theme?label=downloads&color=ff7a1a)](https://open-vsx.org/extension/xainse/xain-torras-26-theme)
+[![Open VSX Rating](https://img.shields.io/open-vsx/rating/xainse/xain-torras-26-theme?label=rating)](https://open-vsx.org/extension/xainse/xain-torras-26-theme/reviews)
+[![License: MIT](https://img.shields.io/github/license/xainse/cursor-theme-xain-torras-26?color=blue)](./LICENSE)
+[![Last commit](https://img.shields.io/github/last-commit/xainse/cursor-theme-xain-torras-26)](https://github.com/xainse/cursor-theme-xain-torras-26/commits/main)
+
 Light themes for Cursor/VS Code based on the `xain-torras-26` palette.
+
+## Preview
+
+![XAIN Torras 26 theme — Cursor preview](./xain-cusor-theme-26.png)
 
 ## Included themes
 
@@ -65,9 +76,27 @@ Do the following end-to-end without asking me to run anything manually:
 
 Cursor installs extensions from Open VSX.
 
-1. Create a publisher namespace on [open-vsx.org](https://open-vsx.org/).
-2. Ensure `publisher` in `package.json` matches your Open VSX namespace.
-3. Publish:
+### Automated release (recommended)
+
+Releases are published automatically by [`.github/workflows/publish.yml`](.github/workflows/publish.yml) when a `v*.*.*` tag is pushed. The workflow packages the `.vsix`, publishes it to Open VSX and attaches the artifact to a GitHub Release.
+
+One-time setup:
+
+1. Create a Personal Access Token on [open-vsx.org](https://open-vsx.org/user-settings/tokens).
+2. In the repo go to **Settings → Secrets and variables → Actions → New repository secret** and add:
+   - Name: `OVSX_PAT`
+   - Value: your Open VSX token
+
+Cutting a release:
+
+```bash
+npm version patch   # or minor / major — bumps package.json and creates a tag
+git push --follow-tags
+```
+
+You can also trigger the workflow manually from the **Actions** tab (use the `dry_run` input to only build the `.vsix` without publishing).
+
+### Manual publish
 
 ```bash
 npx ovsx publish -p <OPEN_VSX_TOKEN>

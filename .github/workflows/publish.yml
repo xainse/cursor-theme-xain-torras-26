@@ -1,0 +1,85 @@
+name: Publish
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Package only, do not publish"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Package & publish to Open VSX
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Read package metadata
+        id: pkg
+        run: |
+          NAME=$(node -p "require('./package.json').name")
+          PUBLISHER=$(node -p "require('./package.json').publisher")
+          VERSION=$(node -p "require('./package.json').version")
+          VSIX="${NAME}-${VERSION}.vsix"
+          echo "name=${NAME}"           >> "$GITHUB_OUTPUT"
+          echo "publisher=${PUBLISHER}" >> "$GITHUB_OUTPUT"
+          echo "version=${VERSION}"     >> "$GITHUB_OUTPUT"
+          echo "vsix=${VSIX}"           >> "$GITHUB_OUTPUT"
+
+      - name: Verify tag matches package.json version
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          TAG_VERSION="${GITHUB_REF#refs/tags/v}"
+          if [ "$TAG_VERSION" != "${{ steps.pkg.outputs.version }}" ]; then
+            echo "::error::Tag v${TAG_VERSION} does not match package.json version ${{ steps.pkg.outputs.version }}"
+            exit 1
+          fi
+
+      - name: Package extension (.vsix)
+        run: npx --yes @vscode/vsce package --out "${{ steps.pkg.outputs.vsix }}"
+
+      - name: Upload .vsix as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.pkg.outputs.vsix }}
+          path: ${{ steps.pkg.outputs.vsix }}
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Publish to Open VSX
+        if: github.event_name == 'push' || github.event.inputs.dry_run != 'true'
+        env:
+          OVSX_PAT: ${{ secrets.OVSX_PAT }}
+        run: |
+          if [ -z "$OVSX_PAT" ]; then
+            echo "::error::OVSX_PAT secret is not set. Add it under Settings → Secrets and variables → Actions."
+            exit 1
+          fi
+          npx --yes ovsx publish "${{ steps.pkg.outputs.vsix }}" --pat "$OVSX_PAT"
+
+      - name: Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ steps.pkg.outputs.vsix }}
+          generate_release_notes: true
+          fail_on_unmatched_files: true

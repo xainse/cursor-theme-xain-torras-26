@@ -28,7 +28,7 @@ Install the "Xain Torras 26" Cursor color theme from Open VSX and activate it.
 Extension id:    `xainse.xain-torras-26-theme`
 Open VSX page:   https://open-vsx.org/extension/xainse/xain-torras-26-theme
 Theme labels:
-- `xain-torras-26`                       (default, dark)
+- `xain-torras-26`                       (default, light)
 - `xain-torras-26 High Contrast Light`
 
 Goal: end-to-end, no manual UI steps unless EVERY automatic path below has

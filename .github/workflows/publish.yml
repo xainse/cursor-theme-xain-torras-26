@@ -18,6 +18,12 @@ concurrency:
   group: publish-${{ github.ref }}
   cancel-in-progress: false
 
+env:
+  # Opt in early to the Node.js 24 runtime for JavaScript actions
+  # (GitHub will force this on 2026-06-16, see:
+  # https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/)
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 jobs:
   publish:
     name: Package & publish to Open VSX
@@ -31,7 +37,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
 
       - name: Read package metadata
         id: pkg
@@ -69,12 +75,37 @@ jobs:
         if: github.event_name == 'push' || github.event.inputs.dry_run != 'true'
         env:
           OVSX_PAT: ${{ secrets.OVSX_PAT }}
+          VSIX: ${{ steps.pkg.outputs.vsix }}
+          PUBLISHER: ${{ steps.pkg.outputs.publisher }}
+          EXT_NAME: ${{ steps.pkg.outputs.name }}
+          VERSION: ${{ steps.pkg.outputs.version }}
         run: |
           if [ -z "$OVSX_PAT" ]; then
             echo "::error::OVSX_PAT secret is not set. Add it under Settings → Secrets and variables → Actions."
             exit 1
           fi
-          npx --yes ovsx publish "${{ steps.pkg.outputs.vsix }}" --pat "$OVSX_PAT"
+
+          set +e
+          OUTPUT=$(npx --yes ovsx publish "$VSIX" --pat "$OVSX_PAT" 2>&1)
+          STATUS=$?
+          set -e
+
+          echo "$OUTPUT"
+
+          if [ $STATUS -eq 0 ]; then
+            echo "Published ${PUBLISHER}.${EXT_NAME}@${VERSION} to Open VSX."
+            exit 0
+          fi
+
+          # Treat "already published" as a no-op so re-runs of the same
+          # version (e.g. manual workflow_dispatch after a tag push) do not
+          # fail the workflow.
+          if echo "$OUTPUT" | grep -qiE "already (published|exists)"; then
+            echo "::warning::${PUBLISHER}.${EXT_NAME}@${VERSION} is already on Open VSX. Skipping publish."
+            exit 0
+          fi
+
+          exit $STATUS
 
       - name: Create GitHub Release
         if: startsWith(github.ref, 'refs/tags/v')

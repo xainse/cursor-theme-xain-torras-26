@@ -11,7 +11,7 @@ Light themes for Cursor/VS Code based on the `xain-torras-26` palette.
 
 ## Preview
 
-![XAIN Torras 26 theme — Cursor preview](./xain-cusor-theme-26.png)
+![XAIN Torras 26 theme — Cursor preview](./xain-cursor-theme-26.png)
 
 ## Included themes
 

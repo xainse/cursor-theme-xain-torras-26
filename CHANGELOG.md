@@ -3,11 +3,11 @@
 All notable changes to the **XAIN Torras 26 Theme Pack** are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
-and this project adheres to [Calendar Versioning (CalVer)](https://calver.org/) (`YYYY.MM.PATCH`).
+and this project adheres to [Calendar Versioning (CalVer)](https://calver.org/) (`YYYY.M.PATCH`, no leading zeros — required by VS Code/Open VSX).
 
 ## [Unreleased]
 
-## [2026.09.1] - 2026-09-06
+## [2026.9.1] - 2026-09-06
 
 ### Added
 - `xain-torras-26 Dark` — navy dark theme from the Torras dark reference, with the same orange accent `#FC703C`, in the existing theme pack alongside light and high-contrast light.
@@ -77,8 +77,8 @@ and this project adheres to [Calendar Versioning (CalVer)](https://calver.org/) 
 - MIT `LICENSE`.
 - Initial `README.md` with installation and local-test instructions.
 
-[Unreleased]: https://github.com/xainse/cursor-theme-xain-torras-26/compare/v2026.09.1...HEAD
-[2026.09.1]: https://github.com/xainse/cursor-theme-xain-torras-26/compare/v0.0.5...v2026.09.1
+[Unreleased]: https://github.com/xainse/cursor-theme-xain-torras-26/compare/v2026.9.1...HEAD
+[2026.9.1]: https://github.com/xainse/cursor-theme-xain-torras-26/compare/v0.0.5...v2026.9.1
 [0.0.5]: https://github.com/xainse/cursor-theme-xain-torras-26/compare/v0.0.4...v0.0.5
 [0.0.4]: https://github.com/xainse/cursor-theme-xain-torras-26/compare/v0.0.3...v0.0.4
 [0.0.3]: https://github.com/xainse/cursor-theme-xain-torras-26/compare/v0.0.2...v0.0.3

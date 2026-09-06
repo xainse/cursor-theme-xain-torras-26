@@ -3,12 +3,19 @@
 All notable changes to the **XAIN Torras 26 Theme Pack** are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+and this project adheres to [Calendar Versioning (CalVer)](https://calver.org/) (`YYYY.MM.PATCH`).
 
 ## [Unreleased]
 
+## [2026.09.1] - 2026-09-06
+
 ### Added
 - `xain-torras-26 Dark` — navy dark theme from the Torras dark reference, with the same orange accent `#FC703C`, in the existing theme pack alongside light and high-contrast light.
+- Dark theme preview screenshot (`xain-cursor-dark-theme-26.png`) as the primary README preview; light preview kept at the bottom.
+- README badges: GitHub Release, Stars, VS Code `^1.80.0`, and Cursor theme.
+
+### Changed
+- Sidebars and tabs use blue-violet navy from the dark reference; terminal/panel match the status bar (`#22283A`).
 
 ## [0.0.5] - 2026-05-30
 
@@ -70,7 +77,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - MIT `LICENSE`.
 - Initial `README.md` with installation and local-test instructions.
 
-[Unreleased]: https://github.com/xainse/cursor-theme-xain-torras-26/compare/v0.0.5...HEAD
+[Unreleased]: https://github.com/xainse/cursor-theme-xain-torras-26/compare/v2026.09.1...HEAD
+[2026.09.1]: https://github.com/xainse/cursor-theme-xain-torras-26/compare/v0.0.5...v2026.09.1
 [0.0.5]: https://github.com/xainse/cursor-theme-xain-torras-26/compare/v0.0.4...v0.0.5
 [0.0.4]: https://github.com/xainse/cursor-theme-xain-torras-26/compare/v0.0.3...v0.0.4
 [0.0.3]: https://github.com/xainse/cursor-theme-xain-torras-26/compare/v0.0.2...v0.0.3

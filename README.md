@@ -1,21 +1,26 @@
 # XAIN Torras 26 Theme Pack
 
 [![Publish](https://github.com/xainse/cursor-theme-xain-torras-26/actions/workflows/publish.yml/badge.svg?event=push)](https://github.com/xainse/cursor-theme-xain-torras-26/actions/workflows/publish.yml?query=event%3Apush)
+[![Release](https://img.shields.io/github/v/release/xainse/cursor-theme-xain-torras-26?display_name=tag)](https://github.com/xainse/cursor-theme-xain-torras-26/releases)
 [![Open VSX Version](https://img.shields.io/open-vsx/v/xainse/xain-torras-26-theme?label=Open%20VSX&color=c160ef)](https://open-vsx.org/extension/xainse/xain-torras-26-theme)
 [![Open VSX Downloads](https://img.shields.io/open-vsx/dt/xainse/xain-torras-26-theme?label=downloads&color=ff7a1a)](https://open-vsx.org/extension/xainse/xain-torras-26-theme)
 [![Open VSX Rating](https://img.shields.io/open-vsx/rating/xainse/xain-torras-26-theme?label=rating)](https://open-vsx.org/extension/xainse/xain-torras-26-theme/reviews)
+[![Stars](https://img.shields.io/github/stars/xainse/cursor-theme-xain-torras-26)](https://github.com/xainse/cursor-theme-xain-torras-26/stargazers)
+[![VS Code](https://img.shields.io/badge/VS%20Code-%5E1.80.0-007ACC)](https://code.visualstudio.com/)
+[![Cursor](https://img.shields.io/badge/Cursor-theme-000000)](https://cursor.com/)
 [![License: MIT](https://img.shields.io/github/license/xainse/cursor-theme-xain-torras-26?color=blue)](./LICENSE)
 [![Last commit](https://img.shields.io/github/last-commit/xainse/cursor-theme-xain-torras-26)](https://github.com/xainse/cursor-theme-xain-torras-26/commits/main)
 
-Light themes for Cursor/VS Code based on the `xain-torras-26` palette.
+Light and dark themes for Cursor/VS Code based on the `xain-torras-26` palette.
 
 ## Preview
 
-![XAIN Torras 26 theme — Cursor preview](./xain-cursor-theme-26.png)
+![XAIN Torras 26 Dark — Cursor preview](./xain-cursor-dark-theme-26.png)
 
 ## Included themes
 
-- `xain-torras-26`
+- `xain-torras-26` (light, default)
+- `xain-torras-26 Dark` (dark)
 - `xain-torras-26 High Contrast Light`
 
 ## Install via Cursor Agent (one-click prompt)
@@ -29,6 +34,7 @@ Extension id:    `xainse.xain-torras-26-theme`
 Open VSX page:   https://open-vsx.org/extension/xainse/xain-torras-26-theme
 Theme labels:
 - `xain-torras-26`                       (default, light)
+- `xain-torras-26 Dark`                  (dark)
 - `xain-torras-26 High Contrast Light`
 
 Goal: end-to-end, no manual UI steps unless EVERY automatic path below has
@@ -167,3 +173,7 @@ npx ovsx publish -p <OPEN_VSX_TOKEN>
 ```bash
 npx @vscode/vsce publish
 ```
+
+## Light theme preview
+
+![XAIN Torras 26 light — Cursor preview](./xain-cursor-theme-26.png)

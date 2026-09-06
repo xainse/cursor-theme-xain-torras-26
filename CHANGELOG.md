@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- `xain-torras-26 Dark` — navy dark theme from the Torras dark reference, with the same orange accent `#FC703C`, in the existing theme pack alongside light and high-contrast light.
+
 ## [0.0.5] - 2026-05-30
 
 ### Changed

@@ -1,7 +1,7 @@
 {
   "name": "xain-torras-26-theme",
   "displayName": "Xain Torras 26 Theme Pack",
-  "description": "Light Cursor/VS Code themes inspired by Torras palette with orange accents.",
+  "description": "Light and dark Cursor/VS Code themes inspired by Torras palette with orange accents.",
   "version": "0.0.5",
   "publisher": "xainse",
   "icon": "images/icon.png",
@@ -23,6 +23,7 @@
   "keywords": [
     "theme",
     "light",
+    "dark",
     "cursor",
     "orange",
     "torras"
@@ -37,6 +38,11 @@
         "label": "xain-torras-26",
         "uiTheme": "vs",
         "path": "./themes/xain-torras-26-color-theme.json"
+      },
+      {
+        "label": "xain-torras-26 Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xain-torras-26-dark-color-theme.json"
       },
       {
         "label": "xain-torras-26 High Contrast Light",
